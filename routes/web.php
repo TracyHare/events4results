@@ -20,8 +20,3 @@ Route::get('/', [RegistrationController::class, 'index'])->name('home');
 Route::post('/', [RegistrationController::class, 'store'])->name('home');
 
 
-
-Route::get('/test', function() {
-    $file = Storage::get('business_planning.ics');
-    dd($file);
-});
