@@ -1,19 +1,22 @@
 @component('mail::message')
 # 2022 Business Planning Event
 
-Dear {{ $guest->first_name }},
+Dear {{ $registrant->first_name }},
 
 We have received your registration for the 2022 Business Planning Event on November 30th, 2021.
 
 We look forward to seeing you there!
 
-@component('mail::button', ['url' => 'https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20210714T130000Z%2F20210714T163000Z&details=8%3A00%20-%20Hot%20Breakfast%0A9%3A00%20-%20John%20P.%20Rahoy%0A10%3A00%20-%20Jared%20James&location=Holiday%20Inn%20Southwest%2C%2010709%20Watson%20Road%2C%20Saint%20Louis%2C%20MO%2063127&text=Jared%20James%20Live%20Event', 'color' => 'primary'])
+@component('mail::button', ['url' => 'https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20211130T150000Z%2F20211130T223000Z&location=12777%20Olive%20Blvd%5C%2C%20St.%20Louis%2C%20MO%2063141&text=2022%20Business%20Planning', 'color' => 'primary'])
     Add to Google Calendar
 @endcomponent
-@component('mail::button', ['url' => 'https://outlook.office.com/calendar/0/deeplink/compose?body=8%3A00%20-%20Hot%20Breakfast%0A9%3A00%20-%20John%20P.%20Rahoy%0A10%3A00%20-%20Jared%20James&enddt=2021-07-14T16%3A30%3A00%2B00%3A00&location=Holiday%20Inn%20Southwest%2C%2010709%20Watson%20Road%2C%20Saint%20Louis%2C%20MO%2063127&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2021-07-14T13%3A00%3A00%2B00%3A00&subject=Jared%20James%20Live%20Event', 'color' => 'primary'])
+@component('mail::button', ['url' => 'https://outlook.live.com/calendar/0/deeplink/compose?enddt=2021-11-30T22%3A30%3A00%2B00%3A00&location=12777%20Olive%20Blvd%5C%2C%20St.%20Louis%2C%20MO%2063141&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2021-11-30T15%3A00%3A00%2B00%3A00&subject=2022%20Business%20Planning', 'color' => 'primary'])
+    Add to Outlook Calendar
+@endcomponent
+@component('mail::button', ['url' => 'https://outlook.office.com/calendar/0/deeplink/compose?enddt=2021-11-30T22%3A30%3A00%2B00%3A00&location=12777%20Olive%20Blvd%5C%2C%20St.%20Louis%2C%20MO%2063141&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2021-11-30T15%3A00%3A00%2B00%3A00&subject=2022%20Business%20Planning', 'color' => 'primary'])
     Add to Office365 Calendar
 @endcomponent
-@component('mail::button', ['url' => 'https://calendar.yahoo.com/?desc=8%3A00%20-%20Hot%20Breakfast%0A9%3A00%20-%20John%20P.%20Rahoy%0A10%3A00%20-%20Jared%20James&et=20210714T163000Z&in_loc=Holiday%20Inn%20Southwest%2C%2010709%20Watson%20Road%2C%20Saint%20Louis%2C%20MO%2063127&st=20210714T130000Z&title=Jared%20James%20Live%20Event&v=60', 'color' => 'primary'])
+@component('mail::button', ['url' => 'https://calendar.yahoo.com/?et=20211130T223000Z&in_loc=12777%20Olive%20Blvd%5C%2C%20St.%20Louis%2C%20MO%2063141&st=20211130T150000Z&title=2022%20Business%20Planning&v=60', 'color' => 'primary'])
     Add to Yahoo Calendar
 @endcomponent
 

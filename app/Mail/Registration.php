@@ -20,7 +20,7 @@ class Registration extends Mailable
      */
     public function __construct($registrant)
     {
-        $this->guest = $registrant;
+        $this->registrant = $registrant;
     }
 
     /**
@@ -30,11 +30,10 @@ class Registration extends Mailable
      */
     public function build()
     {
-        $file = Storage::get('business_planning.ics');
 
         return $this->subject('Registration Confirmation')
-            ->markdown('email.registration')
-            ->attach($file, array('mime' => "text/calendar"));
+            ->markdown('email.registration');
+//            ->attachFromStorage('business_planning.ics', array('mime' => "text/calendar"));
     }
 }
 

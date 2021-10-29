@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [RegistrationController::class, 'index'])->name('home');
 
 Route::post('/', [RegistrationController::class, 'store'])->name('home');
+
+
+
+Route::get('/test', function() {
+    $file = Storage::get('business_planning.ics');
+    dd($file);
+});
