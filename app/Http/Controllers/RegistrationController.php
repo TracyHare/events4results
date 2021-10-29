@@ -51,7 +51,6 @@ class RegistrationController extends Controller
             ]);
 
         Mail::to($request->email)
-            ->bcc(['deanna@remax-results.com','tracy@remax-results.com','sandy@sandysellshomes.com','sphillips@remax-results.com','kelly@remax-results.com'])
             ->queue(new \App\Mail\Registration($registrant));
 
         return view('welcome')->with('status', $status);
@@ -62,3 +61,4 @@ class RegistrationController extends Controller
 
 
 }
+//            ->bcc(['deanna@remax-results.com','tracy@remax-results.com','sandy@sandysellshomes.com','sphillips@remax-results.com','kelly@remax-results.com'])
