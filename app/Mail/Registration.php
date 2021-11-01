@@ -33,6 +33,7 @@ class Registration extends Mailable
         $file = 'events/business_planning.ics';
 
         return $this->subject('Registration Confirmation')
+            ->replyTo('rsvp@remax-results.com')
             ->markdown('email.registration')
             ->attach($file, ['mime' => "text/calendar"]);
     }
