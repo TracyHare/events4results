@@ -30,10 +30,11 @@ class Registration extends Mailable
      */
     public function build()
     {
+        $file = 'business_planning.ics';
 
         return $this->subject('Registration Confirmation')
-            ->markdown('email.registration');
-//            ->attachFromStorage('business_planning.ics', array('mime' => "text/calendar"));
+            ->markdown('email.registration')
+            ->attach($file, ['mime' => "text/calendar"]);
     }
 }
 

@@ -55,10 +55,7 @@ class RegistrationController extends Controller
             ->queue(new \App\Mail\Registration($registrant));
 
         return view('welcome')->with('status', $status);
-
-
     }
-
 
 
 }

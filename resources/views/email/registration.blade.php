@@ -25,4 +25,8 @@ We look forward to seeing you there!
 Registration Information<br>
 Name: {{ $registrant->first_name }} {{ $registrant->last_name }}<br>
 Email Address: {{ $registrant->email }}<br>
+Phone Number: {{ $registrant->phone }}<br>
+Company: {{ $registrant->company }}<br>
+Attending: @if ($registrant->in_person) In Person @else Zoom @endif<br>
+Message: {{ $registrant->message }}
 @endcomponent
