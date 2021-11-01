@@ -30,7 +30,7 @@ class Registration extends Mailable
      */
     public function build()
     {
-        $file = 'business_planning.ics';
+        $file = 'events/business_planning.ics';
 
         return $this->subject('Registration Confirmation')
             ->markdown('email.registration')
