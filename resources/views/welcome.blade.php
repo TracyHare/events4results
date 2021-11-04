@@ -279,7 +279,10 @@
                             <div class="sm:col-span-2">
                                 <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
                                 <div class="mt-1">
-                                    <textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md"></textarea>
+                                    <textarea id="message" name="message" rows="4"
+                                              class="py-3 px-4 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md placeholder-shown:italic placeholder-gray-400"
+                                                placeholder="Dietary requirements, accessibility requirements, etc."
+                                    ></textarea>
                                 </div>
                             </div>
 
