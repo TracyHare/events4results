@@ -102,7 +102,7 @@
             <div id="details" class="py-16 relative bg-gray-100">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
-                        <img class="h-full w-full object-cover" src="events/2022_business_planning.png" alt="Event Flyer">
+                        <img class="h-full w-full object-cover" src="events/2022_business_planning.jpg" alt="Event Flyer">
                     </div>
                 </div>
             </div>
