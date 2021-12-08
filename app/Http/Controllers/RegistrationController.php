@@ -10,19 +10,29 @@ class RegistrationController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('ce');
     }
 
 
     public function store(Request $request)
     {
+
+//dd($request);
+
+
+
         $rules = [
             'first_name'    => 'required',
             'last_name'     => 'required',
-            'company'       => 'required',
+            'license'       => 'required',
             'email'         => 'required|email:rfc',
             'phone'         => 'required|min:14',
-            'in_person'     => 'required',
+            'address'       => 'required',
+            'city'          => 'required',
+            'state'         => 'required',
+            'zip_code'      => 'required|numeric|min:5',
+            'class'         => 'required',
+            'lunch'         => 'required',
             'message'       => 'nullable'
         ];
 
@@ -30,31 +40,55 @@ class RegistrationController extends Controller
             'email.required'    => "Required",
             'email.email'       => "This email appears invalid",
             'phone.required'    => "Required",
-            'phone.min'         => "This phone number is too short."
+            'phone.min'         => "This phone number is too short.",
+            'zip_code.required' => "Required",
+            'zip_code.min'      => "Invalid",
+            'zip_code.max'      => "Invalid",
+            'class.required'    => "Please select a class option.",
+            'lunch.required'    => "Please select a lunch option."
         ];
 
         $this->validate($request, $rules, $customMessages);
 
+        $classes = [
+            1 => 'Federal Fair Housing',
+            2 => 'Smart Growth for the 21st Century',
+            3 => 'Federal Fair Housing -AND- Smart Growth for the 21st Century'
+        ];
+
+        $lunches = [
+            1 => 'Chopped Garden Salad',
+            2 => 'Harvest Salad',
+            3 => 'Skyscraper Sandwich',
+            4 => 'Bottom Line Sandwich',
+            5 => 'Grilled Vegetable Wrap',
+            6 => 'Net Profit Sandwich',
+            7 => 'No Lunch'
+        ];
 
         $status = (Registration::query()->where('email', $request->email)->first()) ? 'Your Registration Has Been Updated.' : 'Your Registration Has Been Received.';
-
 
         $registrant = Registration::updateOrCreate(
             ['email' => $request->email],
             [
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'company' => $request->company,
-                'phone' => $request->phone,
-                'in_person' => $request->in_person,
-                'message' => $request->message
+                'first_name'    => $request->first_name,
+                'last_name'     => $request->last_name,
+                'license'       => $request->license,
+                'phone'         => $request->phone,
+                'address'       => $request->address,
+                'city'          => $request->city,
+                'state'         => $request->state,
+                'zip_code'      => $request->zip_code,
+                'message'       => $request->message,
+                'lunch'         => $lunches[$request->lunch],
+                'class'         => $classes[$request->class]
             ]);
 
         Mail::to($request->email)
-            ->bcc(['deanna@remax-results.com','tracy@remax-results.com','sandy@sandysellshomes.com','sphillips@remax-results.com','kelly.dierkes@remax-results.com'])
+            
             ->queue(new \App\Mail\Registration($registrant));
 
-        return view('welcome')->with('status', $status);
+        return view('ce')->with('status', $status);
     }
 
 

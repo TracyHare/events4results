@@ -30,7 +30,17 @@ class Registration extends Mailable
      */
     public function build()
     {
-        $file = 'events/business_planning.ics';
+        if ($this->registrant->class == 'Federal Fair Housing' && $this->registrant->lunch == 'No Lunch') {
+            $file = 'events/2022-01-25-1.ics';
+        } else if ($this->registrant->class == 'Federal Fair Housing' && $this->registrant->lunch != 'No Lunch') {
+            $file = 'events/2022-01-25-1-l.ics';
+        } else if ($this->registrant->class == 'Smart Growth for the 21st Century' && $this->registrant->lunch == 'No Lunch') {
+            $file = 'events/2022-01-25-2.ics';
+        } else if ($this->registrant->class == 'Smart Growth for the 21st Century' && $this->registrant->lunch != 'No Lunch') {
+            $file = 'events/2022-01-25-2-l.ics';
+        } else {
+            $file = 'events/2022-01-25.ics';
+        }
 
         return $this->subject('Registration Confirmation')
             ->replyTo('rsvp@remax-results.com')
