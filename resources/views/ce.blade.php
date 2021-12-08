@@ -22,7 +22,7 @@
             <div class="relative bg-white">
                 <div class="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
                     <div class="flex justify-start lg:w-0 lg:flex-1">
-                        <a href="#">
+                        <a href="/">
                             <span class="sr-only">RE/MAX Results Events</span>
                             <img class="h-8 w-auto sm:h-10" src="https://remax-results.com/img/results_logo_03.svg" alt="">
                         </a>
@@ -149,7 +149,7 @@
                         </p>
                     </div>
                     <div class="mt-12">
-                        <form action="ce#registration" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-4 sm:gap-x-8">
+                        <form action="1#registration" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-4 sm:gap-x-8">
                             @CSRF
                             <div class="sm:col-span-2">
                                 <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>

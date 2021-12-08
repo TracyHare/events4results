@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
-                            <a href="ce" class="block">
+                            <a href="1" class="block">
                             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                 <div class="flex-shrink-0">
                                     <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">

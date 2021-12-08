@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Storage;
 
 Route::view('/', 'welcome')->name('home');
 
-Route::get('/ce', [RegistrationController::class, 'index']);
+Route::get('/1', [RegistrationController::class, 'index']);
 
-Route::post('/ce', [RegistrationController::class, 'store']);
+Route::post('/1', [RegistrationController::class, 'store']);
 
 
